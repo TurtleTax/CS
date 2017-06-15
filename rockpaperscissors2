@@ -1,0 +1,106 @@
+/**
+Jonathan Brann
+15 June 2017
+Program designed to judge a two player game of paper, rock, and scissors.
+*/
+using System;
+
+    class Game
+    {
+        static void Main(string[] args)
+        { //main
+          //variables
+            string result = ""; // make a result variable so i don't write as much
+            //ask for player 1 choice
+            Console.Write("Player One, enter your choice; rock, paper, or scissors." + Environment.NewLine + "");
+            string player1 = Console.ReadLine().ToLower();
+            switch (player1) // this is a list of options the player can pick from
+            {
+                case "rock":
+                      break;
+                case "paper":
+                      break;
+                case "scissors":
+                      break;
+                case "": // hitting enter closes the game
+                    Console.WriteLine("Exit.");
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("You have made an invalid choice.");
+                    Environment.Exit(0);
+                    break;
+            }
+
+            //ask for player 2 in the same way we did player 1
+            Console.Write("Player Two, enter your choice; rock, paper, or scissors." + Environment.NewLine + "");
+            string player2 = Console.ReadLine().ToLower();
+              switch (player2)
+            {
+                case "rock":
+                      break;
+                case "paper":
+                      break;
+                case "scissors":
+                      break;
+                case "":
+                    Console.WriteLine("Exit.");
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("You have made an invalid choice.");
+                    Environment.Exit(0);
+                    break;
+            }
+            switch (player1)// this switch is the game logic
+            { 
+                case "rock":
+                    if (player2 == "rock")
+                    {
+                        result = "Tie";
+                    }
+                    else if (player2 == "paper")
+                    {
+                        result = "Player 2 Wins";
+                    }
+                    else if (player2 == "scissors")
+                    {
+                        result = "Player 1 Wins";
+                    }
+                    break;
+                case "paper":
+ 
+                    if (player2 == "rock")
+                    {
+                        result = "Player 1 Wins";
+                    }
+                    else if (player2 == "paper")
+                    {
+                        result = "Tie";
+                    }
+                    else if (player2 == "scissors")
+                    {
+                        result = "Player 2 Wins";
+                    }
+                    break;
+                case "scissors":
+                    if (player2 == "rock")
+                    {
+                        result = "Player 2 Wins";
+                    }
+                    else if (player2 == "paper")
+                    {
+                        result = "Player 1 Wins";
+                    }
+                    else if (player2 == "scissors")
+                    {
+                        result = "Tie";
+                    }
+                    break;            
+            }
+ 
+            Console.Write(result); //the results display with one line
+ 
+        } //Main
+ 
+    }//Class
